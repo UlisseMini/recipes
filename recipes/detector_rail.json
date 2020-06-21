@@ -1,23 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "X X",
-    "X#X",
-    "XRX"
-  ],
-  "key": {
-    "R": {
-      "item": "minecraft:redstone"
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:detector_rail"
+    ]
+  },
+  "criteria": {
+    "has_rail": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:rail"
+          }
+        ]
+      }
     },
-    "#": {
-      "item": "minecraft:stone_pressure_plate"
-    },
-    "X": {
-      "item": "minecraft:iron_ingot"
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "detector_rail"
+      }
     }
   },
-  "result": {
-    "item": "minecraft:detector_rail",
-    "count": 6
-  }
+  "requirements": [
+    [
+      "has_rail",
+      "has_the_recipe"
+    ]
+  ]
 }

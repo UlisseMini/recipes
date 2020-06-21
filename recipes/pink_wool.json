@@ -1,18 +1,33 @@
 {
-  "type": "crafting_shapeless",
-  "group": "wool",
-  "ingredients": [
-    {
-      "item": "minecraft:dye",
-      "data": 9
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:pink_wool"
+    ]
+  },
+  "criteria": {
+    "has_white_wool": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:wool",
+            "data": 0
+          }
+        ]
+      }
     },
-    {
-      "item": "minecraft:wool",
-      "data": 0
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "pink_wool"
+      }
     }
-  ],
-  "result": {
-    "item": "minecraft:wool",
-    "data": 6
-  }
+  },
+  "requirements": [
+    [
+      "has_white_wool",
+      "has_the_recipe"
+    ]
+  ]
 }

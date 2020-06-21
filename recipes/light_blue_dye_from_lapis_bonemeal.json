@@ -1,19 +1,45 @@
 {
-  "type": "crafting_shapeless",
-  "group": "light_blue_dye",
-  "ingredients": [
-    {
-      "item": "minecraft:dye",
-      "data": 4
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:light_blue_dye_from_lapis_bonemeal"
+    ]
+  },
+  "criteria": {
+    "has_lapis": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:dye",
+            "data": 4
+          }
+        ]
+      }
     },
-    {
-      "item": "minecraft:dye",
-      "data": 15
+    "has_bonemeal": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:dye",
+            "data": 15
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "light_blue_dye_from_lapis_bonemeal"
+      }
     }
-  ],
-  "result": {
-    "item": "minecraft:dye",
-    "data": 12,
-    "count": 2
-  }
+  },
+  "requirements": [
+    [
+      "has_lapis",
+      "has_bonemeal",
+      "has_the_recipe"
+    ]
+  ]
 }

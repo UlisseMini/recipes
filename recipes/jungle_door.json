@@ -1,19 +1,33 @@
 {
-  "type": "crafting_shaped",
-  "group": "wooden_door",
-  "pattern": [
-    "##",
-    "##",
-    "##"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:planks",
-      "data": 3
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:jungle_door"
+    ]
+  },
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "jungle_door"
+      }
+    },
+    "has_planks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:planks",
+            "data": 3
+          }
+        ]
+      }
     }
   },
-  "result": {
-    "item": "minecraft:jungle_door",
-    "count": 3
-  }
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_planks"
+    ]
+  ]
 }

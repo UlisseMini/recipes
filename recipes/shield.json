@@ -1,42 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "WoW",
-    "WWW",
-    " W "
-  ],
-  "key": {
-    "W": [
-      {
-        "item": "minecraft:planks",
-        "data": 0
-      },
-      {
-        "item": "minecraft:planks",
-        "data": 1
-      },
-      {
-        "item": "minecraft:planks",
-        "data": 2
-      },
-      {
-        "item": "minecraft:planks",
-        "data": 3
-      },
-      {
-        "item": "minecraft:planks",
-        "data": 4
-      },
-      {
-        "item": "minecraft:planks",
-        "data": 5
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:shield"
+    ]
+  },
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "shield"
       }
-    ],
-    "o": {
-      "item": "minecraft:iron_ingot"
+    },
+    "has_iron_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:iron_ingot"
+          }
+        ]
+      }
     }
   },
-  "result": {
-    "item": "minecraft:shield"
-  }
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_iron_ingot"
+    ]
+  ]
 }

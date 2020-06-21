@@ -1,18 +1,33 @@
 {
-  "type": "crafting_shapeless",
-  "group": "dyed_bed",
-  "ingredients": [
-    {
-      "item": "minecraft:bed",
-      "data": 0
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:black_bed_from_white_bed"
+    ]
+  },
+  "criteria": {
+    "has_bed": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:bed",
+            "data": 0
+          }
+        ]
+      }
     },
-    {
-      "item": "minecraft:dye",
-      "data": 0
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "black_bed_from_white_bed"
+      }
     }
-  ],
-  "result": {
-    "item": "minecraft:bed",
-    "data": 15
-  }
+  },
+  "requirements": [
+    [
+      "has_bed",
+      "has_the_recipe"
+    ]
+  ]
 }

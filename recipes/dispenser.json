@@ -1,22 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "###",
-    "#X#",
-    "#R#"
-  ],
-  "key": {
-    "R": {
-      "item": "minecraft:redstone"
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:dispenser"
+    ]
+  },
+  "criteria": {
+    "has_bow": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:bow"
+          }
+        ]
+      }
     },
-    "#": {
-      "item": "minecraft:cobblestone"
-    },
-    "X": {
-      "item": "minecraft:bow"
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "dispenser"
+      }
     }
   },
-  "result": {
-    "item": "minecraft:dispenser"
-  }
+  "requirements": [
+    [
+      "has_bow",
+      "has_the_recipe"
+    ]
+  ]
 }

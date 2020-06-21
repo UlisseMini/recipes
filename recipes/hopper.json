@@ -1,19 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "I I",
-    "ICI",
-    " I "
-  ],
-  "key": {
-    "C": {
-      "item": "minecraft:chest"
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:hopper"
+    ]
+  },
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "hopper"
+      }
     },
-    "I": {
-      "item": "minecraft:iron_ingot"
+    "has_iron_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:iron_ingot"
+          }
+        ]
+      }
     }
   },
-  "result": {
-    "item": "minecraft:hopper"
-  }
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_iron_ingot"
+    ]
+  ]
 }

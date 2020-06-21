@@ -1,16 +1,32 @@
 {
-  "type": "crafting_shapeless",
-  "ingredients": [
-    {
-      "item": "minecraft:stonebrick",
-      "data": 0
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:mossy_stonebrick"
+    ]
+  },
+  "criteria": {
+    "has_mossy_cobblestone": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:mossy_cobblestone"
+          }
+        ]
+      }
     },
-    {
-      "item": "minecraft:vine"
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "mossy_stonebrick"
+      }
     }
-  ],
-  "result": {
-    "item": "minecraft:stonebrick",
-    "data": 1
-  }
+  },
+  "requirements": [
+    [
+      "has_mossy_cobblestone",
+      "has_the_recipe"
+    ]
+  ]
 }

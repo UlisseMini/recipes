@@ -1,14 +1,32 @@
 {
-  "type": "crafting_shapeless",
-  "ingredients": [
-    {
-      "item": "minecraft:cobblestone"
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:mossy_cobblestone"
+    ]
+  },
+  "criteria": {
+    "has_vine": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:vine"
+          }
+        ]
+      }
     },
-    {
-      "item": "minecraft:vine"
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "mossy_cobblestone"
+      }
     }
-  ],
-  "result": {
-    "item": "minecraft:mossy_cobblestone"
-  }
+  },
+  "requirements": [
+    [
+      "has_vine",
+      "has_the_recipe"
+    ]
+  ]
 }

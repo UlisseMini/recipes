@@ -1,18 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "X",
-    "#"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:cobblestone"
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:lever"
+    ]
+  },
+  "criteria": {
+    "has_cobblestone": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:cobblestone"
+          }
+        ]
+      }
     },
-    "X": {
-      "item": "minecraft:stick"
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "lever"
+      }
     }
   },
-  "result": {
-    "item": "minecraft:lever"
-  }
+  "requirements": [
+    [
+      "has_cobblestone",
+      "has_the_recipe"
+    ]
+  ]
 }

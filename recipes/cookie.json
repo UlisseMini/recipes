@@ -1,19 +1,33 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "#X#"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:wheat"
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:cookie"
+    ]
+  },
+  "criteria": {
+    "has_cocoa": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:dye",
+            "data": 3
+          }
+        ]
+      }
     },
-    "X": {
-      "item": "minecraft:dye",
-      "data": 3
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "cookie"
+      }
     }
   },
-  "result": {
-    "item": "minecraft:cookie",
-    "count": 8
-  }
+  "requirements": [
+    [
+      "has_cocoa",
+      "has_the_recipe"
+    ]
+  ]
 }

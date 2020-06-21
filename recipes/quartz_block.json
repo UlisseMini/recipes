@@ -1,16 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "##",
-    "##"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:quartz"
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:quartz_block"
+    ]
+  },
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "quartz_block"
+      }
+    },
+    "has_quartz": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:quartz"
+          }
+        ]
+      }
     }
   },
-  "result": {
-    "item": "minecraft:quartz_block",
-    "data": 0
-  }
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_quartz"
+    ]
+  ]
 }

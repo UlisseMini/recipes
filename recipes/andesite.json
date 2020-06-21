@@ -1,17 +1,33 @@
 {
-  "type": "crafting_shapeless",
-  "ingredients": [
-    {
-      "item": "minecraft:stone",
-      "data": 3
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:andesite"
+    ]
+  },
+  "criteria": {
+    "has_stone": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:stone",
+            "data": 3
+          }
+        ]
+      }
     },
-    {
-      "item": "minecraft:cobblestone"
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "andesite"
+      }
     }
-  ],
-  "result": {
-    "item": "minecraft:stone",
-    "data": 5,
-    "count": 2
-  }
+  },
+  "requirements": [
+    [
+      "has_stone",
+      "has_the_recipe"
+    ]
+  ]
 }

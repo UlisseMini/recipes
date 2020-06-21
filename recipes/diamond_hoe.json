@@ -1,19 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "XX",
-    " #",
-    " #"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:stick"
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:diamond_hoe"
+    ]
+  },
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "diamond_hoe"
+      }
     },
-    "X": {
-      "item": "minecraft:diamond"
+    "has_diamond": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:diamond"
+          }
+        ]
+      }
     }
   },
-  "result": {
-    "item": "minecraft:diamond_hoe"
-  }
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_diamond"
+    ]
+  ]
 }

@@ -1,19 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "###",
-    "#X#",
-    "###"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:gold_nugget"
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:speckled_melon"
+    ]
+  },
+  "criteria": {
+    "has_melon": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:melon"
+          }
+        ]
+      }
     },
-    "X": {
-      "item": "minecraft:melon"
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "speckled_melon"
+      }
     }
   },
-  "result": {
-    "item": "minecraft:speckled_melon"
-  }
+  "requirements": [
+    [
+      "has_melon",
+      "has_the_recipe"
+    ]
+  ]
 }

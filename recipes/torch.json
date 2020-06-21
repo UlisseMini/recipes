@@ -1,26 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "X",
-    "#"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:stick"
-    },
-    "X": [
-      {
-        "item": "minecraft:coal",
-        "data": 0
-      },
-      {
-        "item": "minecraft:coal",
-        "data": 1
-      }
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:torch"
     ]
   },
-  "result": {
-    "item": "minecraft:torch",
-    "count": 4
-  }
+  "criteria": {
+    "has_stone_pickaxe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:stone_pickaxe"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "torch"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_stone_pickaxe",
+      "has_the_recipe"
+    ]
+  ]
 }

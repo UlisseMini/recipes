@@ -1,19 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "/",
-    "#"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:chorus_fruit_popped"
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:end_rod"
+    ]
+  },
+  "criteria": {
+    "has_chorus_fruit_popped": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:chorus_fruit_popped"
+          }
+        ]
+      }
     },
-    "/": {
-      "item": "minecraft:blaze_rod"
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "end_rod"
+      }
     }
   },
-  "result": {
-    "item": "minecraft:end_rod",
-    "count": 4
-  }
+  "requirements": [
+    [
+      "has_chorus_fruit_popped",
+      "has_the_recipe"
+    ]
+  ]
 }

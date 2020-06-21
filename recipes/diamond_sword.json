@@ -1,19 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "X",
-    "X",
-    "#"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:stick"
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:diamond_sword"
+    ]
+  },
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "diamond_sword"
+      }
     },
-    "X": {
-      "item": "minecraft:diamond"
+    "has_diamond": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:diamond"
+          }
+        ]
+      }
     }
   },
-  "result": {
-    "item": "minecraft:diamond_sword"
-  }
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_diamond"
+    ]
+  ]
 }

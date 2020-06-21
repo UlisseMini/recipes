@@ -1,15 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "# #",
-    " # "
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:iron_ingot"
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:bucket"
+    ]
+  },
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "bucket"
+      }
+    },
+    "has_iron_ingot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:iron_ingot"
+          }
+        ]
+      }
     }
   },
-  "result": {
-    "item": "minecraft:bucket"
-  }
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_iron_ingot"
+    ]
+  ]
 }

@@ -1,14 +1,43 @@
 {
-  "type": "crafting_shapeless",
-  "ingredients": [
-    {
-      "item": "minecraft:iron_ingot"
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:flint_and_steel"
+    ]
+  },
+  "criteria": {
+    "has_flint": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:flint"
+          }
+        ]
+      }
     },
-    {
-      "item": "minecraft:flint"
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "flint_and_steel"
+      }
+    },
+    "has_obsidian": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:obsidian"
+          }
+        ]
+      }
     }
-  ],
-  "result": {
-    "item": "minecraft:flint_and_steel"
-  }
+  },
+  "requirements": [
+    [
+      "has_flint",
+      "has_the_recipe",
+      "has_obsidian"
+    ]
+  ]
 }

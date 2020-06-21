@@ -1,20 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "X X",
-    "X#X",
-    "X X"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:stick"
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:rail"
+    ]
+  },
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "rail"
+      }
     },
-    "X": {
-      "item": "minecraft:iron_ingot"
+    "has_minecart": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:minecart"
+          }
+        ]
+      }
     }
   },
-  "result": {
-    "item": "minecraft:rail",
-    "count": 16
-  }
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_minecart"
+    ]
+  ]
 }

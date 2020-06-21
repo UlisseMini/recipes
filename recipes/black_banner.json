@@ -1,22 +1,33 @@
 {
-  "type": "crafting_shaped",
-  "group": "banner",
-  "pattern": [
-    "###",
-    "###",
-    " | "
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:wool",
-      "data": 15
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:black_banner"
+    ]
+  },
+  "criteria": {
+    "has_black_wool": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:wool",
+            "data": 15
+          }
+        ]
+      }
     },
-    "|": {
-      "item": "minecraft:stick"
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "black_banner"
+      }
     }
   },
-  "result": {
-    "item": "minecraft:banner",
-    "data": 0
-  }
+  "requirements": [
+    [
+      "has_black_wool",
+      "has_the_recipe"
+    ]
+  ]
 }

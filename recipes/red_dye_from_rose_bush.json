@@ -1,15 +1,33 @@
 {
-  "type": "crafting_shapeless",
-  "group": "red_dye",
-  "ingredients": [
-    {
-      "item": "minecraft:double_plant",
-      "data": 4
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:red_dye_from_rose_bush"
+    ]
+  },
+  "criteria": {
+    "has_double_plant": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:double_plant",
+            "data": 4
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "red_dye_from_rose_bush"
+      }
     }
-  ],
-  "result": {
-    "item": "minecraft:dye",
-    "data": 1,
-    "count": 2
-  }
+  },
+  "requirements": [
+    [
+      "has_double_plant",
+      "has_the_recipe"
+    ]
+  ]
 }

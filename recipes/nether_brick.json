@@ -1,15 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "NN",
-    "NN"
-  ],
-  "key": {
-    "N": {
-      "item": "minecraft:netherbrick"
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:nether_brick"
+    ]
+  },
+  "criteria": {
+    "has_netherbrick": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:netherbrick"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "nether_brick"
+      }
     }
   },
-  "result": {
-    "item": "minecraft:nether_brick"
-  }
+  "requirements": [
+    [
+      "has_netherbrick",
+      "has_the_recipe"
+    ]
+  ]
 }

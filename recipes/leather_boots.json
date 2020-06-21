@@ -1,15 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "X X",
-    "X X"
-  ],
-  "key": {
-    "X": {
-      "item": "minecraft:leather"
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:leather_boots"
+    ]
+  },
+  "criteria": {
+    "has_leather": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:leather"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "leather_boots"
+      }
     }
   },
-  "result": {
-    "item": "minecraft:leather_boots"
-  }
+  "requirements": [
+    [
+      "has_leather",
+      "has_the_recipe"
+    ]
+  ]
 }

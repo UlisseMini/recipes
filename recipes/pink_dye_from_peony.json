@@ -1,15 +1,33 @@
 {
-  "type": "crafting_shapeless",
-  "group": "pink_dye",
-  "ingredients": [
-    {
-      "item": "minecraft:double_plant",
-      "data": 5
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:pink_dye_from_peony"
+    ]
+  },
+  "criteria": {
+    "has_double_plant": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:double_plant",
+            "data": 5
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "pink_dye_from_peony"
+      }
     }
-  ],
-  "result": {
-    "item": "minecraft:dye",
-    "data": 9,
-    "count": 2
-  }
+  },
+  "requirements": [
+    [
+      "has_double_plant",
+      "has_the_recipe"
+    ]
+  ]
 }

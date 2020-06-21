@@ -1,19 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "group": "stained_glass_pane",
-  "pattern": [
-    "###",
-    "###"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:stained_glass",
-      "data": 13
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:green_stained_glass_pane"
+    ]
+  },
+  "criteria": {
+    "has_glass": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:glass"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "green_stained_glass_pane"
+      }
     }
   },
-  "result": {
-    "item": "minecraft:stained_glass_pane",
-    "data": 13,
-    "count": 16
-  }
+  "requirements": [
+    [
+      "has_glass",
+      "has_the_recipe"
+    ]
+  ]
 }

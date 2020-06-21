@@ -1,14 +1,32 @@
 {
-  "type": "crafting_shapeless",
-  "group": "bonemeal",
-  "ingredients": [
-    {
-      "item": "minecraft:bone"
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:bone_meal_from_bone"
+    ]
+  },
+  "criteria": {
+    "has_bone": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:bone"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "bone_meal_from_bone"
+      }
     }
-  ],
-  "result": {
-    "item": "minecraft:dye",
-    "data": 15,
-    "count": 3
-  }
+  },
+  "requirements": [
+    [
+      "has_bone",
+      "has_the_recipe"
+    ]
+  ]
 }

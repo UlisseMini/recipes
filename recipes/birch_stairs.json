@@ -1,19 +1,33 @@
 {
-  "type": "crafting_shaped",
-  "group": "wooden_stairs",
-  "pattern": [
-    "#  ",
-    "## ",
-    "###"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:planks",
-      "data": 2
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:birch_stairs"
+    ]
+  },
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "birch_stairs"
+      }
+    },
+    "has_planks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:planks",
+            "data": 2
+          }
+        ]
+      }
     }
   },
-  "result": {
-    "item": "minecraft:birch_stairs",
-    "count": 4
-  }
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_planks"
+    ]
+  ]
 }

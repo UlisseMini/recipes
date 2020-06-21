@@ -1,18 +1,33 @@
 {
-  "type": "crafting_shaped",
-  "group": "carpet",
-  "pattern": [
-    "##"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:wool",
-      "data": 13
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:green_carpet"
+    ]
+  },
+  "criteria": {
+    "has_green_wool": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:wool",
+            "data": 13
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "green_carpet"
+      }
     }
   },
-  "result": {
-    "item": "minecraft:carpet",
-    "data": 13,
-    "count": 3
-  }
+  "requirements": [
+    [
+      "has_green_wool",
+      "has_the_recipe"
+    ]
+  ]
 }

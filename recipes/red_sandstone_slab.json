@@ -1,27 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "###"
-  ],
-  "key": {
-    "#": [
-      {
-        "item": "minecraft:red_sandstone",
-        "data": 0
-      },
-      {
-        "item": "minecraft:red_sandstone",
-        "data": 1
-      },
-      {
-        "item": "minecraft:red_sandstone",
-        "data": 2
-      }
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:red_sandstone_slab"
     ]
   },
-  "result": {
-    "item": "minecraft:stone_slab2",
-    "data": 0,
-    "count": 6
-  }
+  "criteria": {
+    "has_red_sandstone": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:red_sandstone"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "red_sandstone_slab"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_red_sandstone",
+      "has_the_recipe"
+    ]
+  ]
 }

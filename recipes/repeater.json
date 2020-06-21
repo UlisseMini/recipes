@@ -1,22 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "#X#",
-    "III"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:redstone_torch"
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:repeater"
+    ]
+  },
+  "criteria": {
+    "has_redstone_torch": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:redstone_torch"
+          }
+        ]
+      }
     },
-    "X": {
-      "item": "minecraft:redstone"
-    },
-    "I": {
-      "item": "minecraft:stone",
-      "data": 0
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "repeater"
+      }
     }
   },
-  "result": {
-    "item": "minecraft:repeater"
-  }
+  "requirements": [
+    [
+      "has_redstone_torch",
+      "has_the_recipe"
+    ]
+  ]
 }

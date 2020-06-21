@@ -1,25 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "AAA",
-    "BEB",
-    "CCC"
-  ],
-  "key": {
-    "A": {
-      "item": "minecraft:milk_bucket"
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:cake"
+    ]
+  },
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "cake"
+      }
     },
-    "B": {
-      "item": "minecraft:sugar"
-    },
-    "C": {
-      "item": "minecraft:wheat"
-    },
-    "E": {
-      "item": "minecraft:egg"
+    "has_egg": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:egg"
+          }
+        ]
+      }
     }
   },
-  "result": {
-    "item": "minecraft:cake"
-  }
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_egg"
+    ]
+  ]
 }

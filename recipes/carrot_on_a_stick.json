@@ -1,18 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "# ",
-    " X"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:fishing_rod"
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:carrot_on_a_stick"
+    ]
+  },
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "carrot_on_a_stick"
+      }
     },
-    "X": {
-      "item": "minecraft:carrot"
+    "has_carrot": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:carrot"
+          }
+        ]
+      }
     }
   },
-  "result": {
-    "item": "minecraft:carrot_on_a_stick"
-  }
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_carrot"
+    ]
+  ]
 }

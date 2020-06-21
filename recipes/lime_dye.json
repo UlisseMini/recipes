@@ -1,18 +1,45 @@
 {
-  "type": "crafting_shapeless",
-  "ingredients": [
-    {
-      "item": "minecraft:dye",
-      "data": 2
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:lime_dye"
+    ]
+  },
+  "criteria": {
+    "has_green_dye": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:dye",
+            "data": 2
+          }
+        ]
+      }
     },
-    {
-      "item": "minecraft:dye",
-      "data": 15
+    "has_bonemeal": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:dye",
+            "data": 15
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "lime_dye"
+      }
     }
-  ],
-  "result": {
-    "item": "minecraft:dye",
-    "data": 10,
-    "count": 2
-  }
+  },
+  "requirements": [
+    [
+      "has_green_dye",
+      "has_bonemeal",
+      "has_the_recipe"
+    ]
+  ]
 }

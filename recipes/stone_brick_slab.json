@@ -1,31 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "###"
-  ],
-  "key": {
-    "#": [
-      {
-        "item": "minecraft:stonebrick",
-        "data": 0
-      },
-      {
-        "item": "minecraft:stonebrick",
-        "data": 1
-      },
-      {
-        "item": "minecraft:stonebrick",
-        "data": 2
-      },
-      {
-        "item": "minecraft:stonebrick",
-        "data": 3
-      }
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:stone_brick_slab"
     ]
   },
-  "result": {
-    "item": "minecraft:stone_slab",
-    "data": 5,
-    "count": 6
-  }
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "stone_brick_slab"
+      }
+    },
+    "has_stonebrick": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:stonebrick"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_stonebrick"
+    ]
+  ]
 }

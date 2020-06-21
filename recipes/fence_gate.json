@@ -1,20 +1,33 @@
 {
-  "type": "crafting_shaped",
-  "group": "wooden_fence_gate",
-  "pattern": [
-    "#W#",
-    "#W#"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:stick"
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:fence_gate"
+    ]
+  },
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "fence_gate"
+      }
     },
-    "W": {
-      "item": "minecraft:planks",
-      "data": 0
+    "has_planks": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:planks",
+            "data": 0
+          }
+        ]
+      }
     }
   },
-  "result": {
-    "item": "minecraft:fence_gate"
-  }
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_planks"
+    ]
+  ]
 }

@@ -1,17 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "# #",
-    "###",
-    "# #"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:stick"
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:ladder"
+    ]
+  },
+  "criteria": {
+    "has_stick": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:stick"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "ladder"
+      }
     }
   },
-  "result": {
-    "item": "minecraft:ladder",
-    "count": 3
-  }
+  "requirements": [
+    [
+      "has_stick",
+      "has_the_recipe"
+    ]
+  ]
 }

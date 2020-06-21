@@ -1,23 +1,43 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "X",
-    "#",
-    "Y"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:stick"
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:arrow"
+    ]
+  },
+  "criteria": {
+    "has_feather": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:feather"
+          }
+        ]
+      }
     },
-    "X": {
-      "item": "minecraft:flint"
+    "has_flint": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:flint"
+          }
+        ]
+      }
     },
-    "Y": {
-      "item": "minecraft:feather"
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "arrow"
+      }
     }
   },
-  "result": {
-    "item": "minecraft:arrow",
-    "count": 4
-  }
+  "requirements": [
+    [
+      "has_feather",
+      "has_flint",
+      "has_the_recipe"
+    ]
+  ]
 }

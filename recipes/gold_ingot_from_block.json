@@ -1,16 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "group": "gold_ingot",
-  "pattern": [
-    "#"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:gold_block"
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:gold_ingot_from_block"
+    ]
+  },
+  "criteria": {
+    "has_gold_block": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:gold_block"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "gold_ingot_from_block"
+      }
     }
   },
-  "result": {
-    "item": "minecraft:gold_ingot",
-    "count": 9
-  }
+  "requirements": [
+    [
+      "has_gold_block",
+      "has_the_recipe"
+    ]
+  ]
 }

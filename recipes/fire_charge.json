@@ -1,25 +1,32 @@
 {
-  "type": "crafting_shapeless",
-  "ingredients": [
-    {
-      "item": "minecraft:gunpowder"
-    },
-    {
-      "item": "minecraft:blaze_powder"
-    },
-    [
-      {
-        "item": "minecraft:coal",
-        "data": 0
-      },
-      {
-        "item": "minecraft:coal",
-        "data": 1
-      }
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:fire_charge"
     ]
-  ],
-  "result": {
-    "item": "minecraft:fire_charge",
-    "count": 3
-  }
+  },
+  "criteria": {
+    "has_blaze_powder": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:blaze_powder"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "fire_charge"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_blaze_powder",
+      "has_the_recipe"
+    ]
+  ]
 }

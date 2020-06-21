@@ -1,16 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "###"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:nether_brick"
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:nether_brick_slab"
+    ]
+  },
+  "criteria": {
+    "has_nether_brick": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:nether_brick"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "nether_brick_slab"
+      }
     }
   },
-  "result": {
-    "item": "minecraft:stone_slab",
-    "data": 6,
-    "count": 6
-  }
+  "requirements": [
+    [
+      "has_nether_brick",
+      "has_the_recipe"
+    ]
+  ]
 }

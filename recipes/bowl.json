@@ -1,39 +1,43 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "# #",
-    " # "
-  ],
-  "key": {
-    "#": [
-      {
-        "item": "minecraft:planks",
-        "data": 0
-      },
-      {
-        "item": "minecraft:planks",
-        "data": 1
-      },
-      {
-        "item": "minecraft:planks",
-        "data": 2
-      },
-      {
-        "item": "minecraft:planks",
-        "data": 3
-      },
-      {
-        "item": "minecraft:planks",
-        "data": 4
-      },
-      {
-        "item": "minecraft:planks",
-        "data": 5
-      }
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:bowl"
     ]
   },
-  "result": {
-    "item": "minecraft:bowl",
-    "count": 4
-  }
+  "criteria": {
+    "has_brown_mushroom": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:brown_mushroom"
+          }
+        ]
+      }
+    },
+    "has_red_mushroom": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:red_mushroom"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "bowl"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_brown_mushroom",
+      "has_red_mushroom",
+      "has_the_recipe"
+    ]
+  ]
 }

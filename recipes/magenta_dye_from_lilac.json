@@ -1,15 +1,33 @@
 {
-  "type": "crafting_shapeless",
-  "group": "magenta_dye",
-  "ingredients": [
-    {
-      "item": "minecraft:double_plant",
-      "data": 1
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:magenta_dye_from_lilac"
+    ]
+  },
+  "criteria": {
+    "has_double_plant": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:double_plant",
+            "data": 1
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "magenta_dye_from_lilac"
+      }
     }
-  ],
-  "result": {
-    "item": "minecraft:dye",
-    "data": 13,
-    "count": 2
-  }
+  },
+  "requirements": [
+    [
+      "has_double_plant",
+      "has_the_recipe"
+    ]
+  ]
 }

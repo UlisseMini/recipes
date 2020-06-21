@@ -1,16 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "XXX",
-    "X X",
-    "X X"
-  ],
-  "key": {
-    "X": {
-      "item": "minecraft:diamond"
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:diamond_leggings"
+    ]
+  },
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "diamond_leggings"
+      }
+    },
+    "has_diamond": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:diamond"
+          }
+        ]
+      }
     }
   },
-  "result": {
-    "item": "minecraft:diamond_leggings"
-  }
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_diamond"
+    ]
+  ]
 }

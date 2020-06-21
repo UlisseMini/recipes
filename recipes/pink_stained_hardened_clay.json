@@ -1,23 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "group": "stained_hardened_clay",
-  "pattern": [
-    "###",
-    "#X#",
-    "###"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:hardened_clay"
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:pink_stained_hardened_clay"
+    ]
+  },
+  "criteria": {
+    "has_hardened_clay": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:hardened_clay"
+          }
+        ]
+      }
     },
-    "X": {
-      "item": "minecraft:dye",
-      "data": 9
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "pink_stained_hardened_clay"
+      }
     }
   },
-  "result": {
-    "item": "minecraft:stained_hardened_clay",
-    "data": 6,
-    "count": 8
-  }
+  "requirements": [
+    [
+      "has_hardened_clay",
+      "has_the_recipe"
+    ]
+  ]
 }

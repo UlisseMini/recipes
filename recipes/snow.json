@@ -1,15 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "##",
-    "##"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:snowball"
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:snow"
+    ]
+  },
+  "criteria": {
+    "has_snowball": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:snowball"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "snow"
+      }
     }
   },
-  "result": {
-    "item": "minecraft:snow"
-  }
+  "requirements": [
+    [
+      "has_snowball",
+      "has_the_recipe"
+    ]
+  ]
 }

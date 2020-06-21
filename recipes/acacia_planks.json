@@ -1,18 +1,33 @@
 {
-  "type": "crafting_shaped",
-  "group": "planks",
-  "pattern": [
-    "#"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:log2",
-      "data": 0
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:acacia_planks"
+    ]
+  },
+  "criteria": {
+    "has_log2": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:log2",
+            "data": 0
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "acacia_planks"
+      }
     }
   },
-  "result": {
-    "item": "minecraft:planks",
-    "data": 4,
-    "count": 4
-  }
+  "requirements": [
+    [
+      "has_log2",
+      "has_the_recipe"
+    ]
+  ]
 }

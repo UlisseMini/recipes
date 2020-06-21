@@ -1,19 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "-",
-    "#",
-    "-"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:chest"
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:purple_shulker_box"
+    ]
+  },
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "purple_shulker_box"
+      }
     },
-    "-": {
-      "item": "minecraft:shulker_shell"
+    "has_shulker_shell": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:shulker_shell"
+          }
+        ]
+      }
     }
   },
-  "result": {
-    "item": "minecraft:purple_shulker_box"
-  }
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_shulker_shell"
+    ]
+  ]
 }

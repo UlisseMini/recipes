@@ -1,14 +1,33 @@
 {
-  "type": "crafting_shapeless",
-  "group": "red_dye",
-  "ingredients": [
-    {
-      "item": "minecraft:red_flower",
-      "data": 4
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:red_dye_from_tulip"
+    ]
+  },
+  "criteria": {
+    "has_red_flower": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:red_flower",
+            "data": 4
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "red_dye_from_tulip"
+      }
     }
-  ],
-  "result": {
-    "item": "minecraft:dye",
-    "data": 1
-  }
+  },
+  "requirements": [
+    [
+      "has_red_flower",
+      "has_the_recipe"
+    ]
+  ]
 }

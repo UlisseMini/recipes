@@ -1,16 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "FF",
-    "FF"
-  ],
-  "key": {
-    "F": {
-      "item": "minecraft:chorus_fruit_popped"
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:purpur_block"
+    ]
+  },
+  "criteria": {
+    "has_chorus_fruit_popped": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:chorus_fruit_popped"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "purpur_block"
+      }
     }
   },
-  "result": {
-    "item": "minecraft:purpur_block",
-    "count": 4
-  }
+  "requirements": [
+    [
+      "has_chorus_fruit_popped",
+      "has_the_recipe"
+    ]
+  ]
 }

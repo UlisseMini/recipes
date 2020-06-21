@@ -1,42 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "###",
-    "#X#",
-    "###"
-  ],
-  "key": {
-    "#": [
-      {
-        "item": "minecraft:planks",
-        "data": 0
-      },
-      {
-        "item": "minecraft:planks",
-        "data": 1
-      },
-      {
-        "item": "minecraft:planks",
-        "data": 2
-      },
-      {
-        "item": "minecraft:planks",
-        "data": 3
-      },
-      {
-        "item": "minecraft:planks",
-        "data": 4
-      },
-      {
-        "item": "minecraft:planks",
-        "data": 5
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:noteblock"
+    ]
+  },
+  "criteria": {
+    "has_redstone": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:redstone"
+          }
+        ]
       }
-    ],
-    "X": {
-      "item": "minecraft:redstone"
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "noteblock"
+      }
     }
   },
-  "result": {
-    "item": "minecraft:noteblock"
-  }
+  "requirements": [
+    [
+      "has_redstone",
+      "has_the_recipe"
+    ]
+  ]
 }

@@ -1,22 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    " B ",
-    "D#D",
-    "###"
-  ],
-  "key": {
-    "B": {
-      "item": "minecraft:book"
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:enchanting_table"
+    ]
+  },
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "enchanting_table"
+      }
     },
-    "#": {
-      "item": "minecraft:obsidian"
-    },
-    "D": {
-      "item": "minecraft:diamond"
+    "has_obsidian": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:obsidian"
+          }
+        ]
+      }
     }
   },
-  "result": {
-    "item": "minecraft:enchanting_table"
-  }
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_obsidian"
+    ]
+  ]
 }

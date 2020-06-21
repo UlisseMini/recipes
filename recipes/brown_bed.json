@@ -1,44 +1,33 @@
 {
-  "type": "crafting_shaped",
-  "group": "bed",
-  "pattern": [
-    "###",
-    "XXX"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:wool",
-      "data": 12
-    },
-    "X": [
-      {
-        "item": "minecraft:planks",
-        "data": 0
-      },
-      {
-        "item": "minecraft:planks",
-        "data": 1
-      },
-      {
-        "item": "minecraft:planks",
-        "data": 2
-      },
-      {
-        "item": "minecraft:planks",
-        "data": 3
-      },
-      {
-        "item": "minecraft:planks",
-        "data": 4
-      },
-      {
-        "item": "minecraft:planks",
-        "data": 5
-      }
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:brown_bed"
     ]
   },
-  "result": {
-    "item": "minecraft:bed",
-    "data": 12
-  }
+  "criteria": {
+    "has_brown_wool": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:wool",
+            "data": 12
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "brown_bed"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_brown_wool",
+      "has_the_recipe"
+    ]
+  ]
 }

@@ -1,18 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "A",
-    "B"
-  ],
-  "key": {
-    "A": {
-      "item": "minecraft:pumpkin"
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:lit_pumpkin"
+    ]
+  },
+  "criteria": {
+    "has_pumpkin": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:pumpkin"
+          }
+        ]
+      }
     },
-    "B": {
-      "item": "minecraft:torch"
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "lit_pumpkin"
+      }
     }
   },
-  "result": {
-    "item": "minecraft:lit_pumpkin"
-  }
+  "requirements": [
+    [
+      "has_pumpkin",
+      "has_the_recipe"
+    ]
+  ]
 }

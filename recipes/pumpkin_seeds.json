@@ -1,15 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "M"
-  ],
-  "key": {
-    "M": {
-      "item": "minecraft:pumpkin"
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:pumpkin_seeds"
+    ]
+  },
+  "criteria": {
+    "has_pumpkin": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:pumpkin"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "pumpkin_seeds"
+      }
     }
   },
-  "result": {
-    "item": "minecraft:pumpkin_seeds",
-    "count": 4
-  }
+  "requirements": [
+    [
+      "has_pumpkin",
+      "has_the_recipe"
+    ]
+  ]
 }

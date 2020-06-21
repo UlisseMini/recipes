@@ -1,22 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "GGG",
-    "GSG",
-    "OOO"
-  ],
-  "key": {
-    "S": {
-      "item": "minecraft:nether_star"
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:beacon"
+    ]
+  },
+  "criteria": {
+    "has_nether_star": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:nether_star"
+          }
+        ]
+      }
     },
-    "G": {
-      "item": "minecraft:glass"
-    },
-    "O": {
-      "item": "minecraft:obsidian"
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "beacon"
+      }
     }
   },
-  "result": {
-    "item": "minecraft:beacon"
-  }
+  "requirements": [
+    [
+      "has_nether_star",
+      "has_the_recipe"
+    ]
+  ]
 }

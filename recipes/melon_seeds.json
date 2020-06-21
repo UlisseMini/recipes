@@ -1,14 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "M"
-  ],
-  "key": {
-    "M": {
-      "item": "minecraft:melon"
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:melon_seeds"
+    ]
+  },
+  "criteria": {
+    "has_melon": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:melon"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "melon_seeds"
+      }
     }
   },
-  "result": {
-    "item": "minecraft:melon_seeds"
-  }
+  "requirements": [
+    [
+      "has_melon",
+      "has_the_recipe"
+    ]
+  ]
 }

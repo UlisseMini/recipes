@@ -1,19 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "###",
-    "#X#",
-    "###"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:paper"
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:map"
+    ]
+  },
+  "criteria": {
+    "has_compass": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:compass"
+          }
+        ]
+      }
     },
-    "X": {
-      "item": "minecraft:compass"
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "map"
+      }
     }
   },
-  "result": {
-    "item": "minecraft:map"
-  }
+  "requirements": [
+    [
+      "has_compass",
+      "has_the_recipe"
+    ]
+  ]
 }

@@ -1,18 +1,33 @@
 {
-  "type": "crafting_shaped",
-  "group": "planks",
-  "pattern": [
-    "#"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:log",
-      "data": 1
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:spruce_planks"
+    ]
+  },
+  "criteria": {
+    "has_log": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:log",
+            "data": 1
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spruce_planks"
+      }
     }
   },
-  "result": {
-    "item": "minecraft:planks",
-    "data": 1,
-    "count": 4
-  }
+  "requirements": [
+    [
+      "has_log",
+      "has_the_recipe"
+    ]
+  ]
 }

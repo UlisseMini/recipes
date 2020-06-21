@@ -1,17 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "#",
-    "#"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:stone_slab",
-      "data": 5
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:chiseled_stonebrick"
+    ]
+  },
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "chiseled_stonebrick"
+      }
+    },
+    "has_stonebrick": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:stonebrick"
+          }
+        ]
+      }
     }
   },
-  "result": {
-    "item": "minecraft:stonebrick",
-    "data": 3
-  }
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_stonebrick"
+    ]
+  ]
 }

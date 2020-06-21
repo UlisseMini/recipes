@@ -1,45 +1,32 @@
 {
-  "type": "crafting_shaped",
-  "pattern": [
-    "GGG",
-    "QQQ",
-    "WWW"
-  ],
-  "key": {
-    "Q": {
-      "item": "minecraft:quartz"
-    },
-    "G": {
-      "item": "minecraft:glass"
-    },
-    "W": [
-      {
-        "item": "minecraft:wooden_slab",
-        "data": 0
-      },
-      {
-        "item": "minecraft:wooden_slab",
-        "data": 1
-      },
-      {
-        "item": "minecraft:wooden_slab",
-        "data": 2
-      },
-      {
-        "item": "minecraft:wooden_slab",
-        "data": 3
-      },
-      {
-        "item": "minecraft:wooden_slab",
-        "data": 4
-      },
-      {
-        "item": "minecraft:wooden_slab",
-        "data": 5
-      }
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:daylight_detector"
     ]
   },
-  "result": {
-    "item": "minecraft:daylight_detector"
-  }
+  "criteria": {
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "daylight_detector"
+      }
+    },
+    "has_quartz": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "minecraft:quartz"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_quartz"
+    ]
+  ]
 }

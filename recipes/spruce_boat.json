@@ -1,17 +1,28 @@
 {
-  "type": "crafting_shaped",
-  "group": "boat",
-  "pattern": [
-    "# #",
-    "###"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:planks",
-      "data": 1
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "minecraft:spruce_boat"
+    ]
+  },
+  "criteria": {
+    "entered_water": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "minecraft:water"
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spruce_boat"
+      }
     }
   },
-  "result": {
-    "item": "minecraft:spruce_boat"
-  }
+  "requirements": [
+    [
+      "entered_water",
+      "has_the_recipe"
+    ]
+  ]
 }
